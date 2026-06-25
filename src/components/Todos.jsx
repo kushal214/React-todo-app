@@ -8,10 +8,12 @@ function Todos(props) {
 
       {props.todos.map((todo) => (
         <TodoItem
-          key={todo.id}
-          title={todo.title}
-          desc={todo.desc}
-        />
+  key={todo.id}
+  title={todo.title}
+  desc={todo.desc}
+  todo={todo}
+  onDelete={props.onDelete}
+/>
       ))}
     </div>
   );

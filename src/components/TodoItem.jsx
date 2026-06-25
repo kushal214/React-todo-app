@@ -5,9 +5,12 @@ function TodoItem(props) {
 
       <p>{props.desc}</p>
 
-      <button className="btn btn-danger">
-        Delete
-      </button>
+      <button
+  className="btn btn-danger"
+  onClick={() => props.onDelete(props.todo)}
+>
+  Delete
+</button>
 
       <hr />
     </div>

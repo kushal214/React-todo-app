@@ -1,23 +1,28 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
 
 function App() {
 
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      title: "Read about PC Parts1",
-      desc: "I have to read about latest pc parts in the market1",
-    },
-    {
-      id: 2,
-      title: "Learn React",
-      desc: "Complete Props Topic",
-    },
-  ]);
+  const [todos, setTodos] = useState(() => {
+
+  const savedTodos = localStorage.getItem("todos");
+
+  if (savedTodos) {
+    return JSON.parse(savedTodos);
+  }
+
+  return [];
+});
+
+  useEffect(() => {
+  localStorage.setItem(
+    "todos",
+    JSON.stringify(todos)
+  );
+}, [todos]);
 
   const addTodo = (title, desc) => {
 
@@ -30,11 +35,19 @@ function App() {
     setTodos([...todos, newTodo]);
   };
 
+  const onDelete = (todo) => {
+  setTodos(
+    todos.filter((e) => {
+      return e !== todo;
+    })
+  );
+};
+
   return (
     <>
       <Header />
       <AddTodo addTodo={addTodo} />
-      <Todos todos={todos} />
+<Todos todos={todos} onDelete={onDelete} />
     </>
   );
 }
