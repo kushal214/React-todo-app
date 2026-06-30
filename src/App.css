@@ -229,3 +229,63 @@
   margin-bottom: 12px;
   color: #555;
 }
+
+/* ================= NAVBAR ================= */
+
+body {
+  background-color: #f5f7fb;
+}
+
+.navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.active {
+  border-bottom: 2px solid #ffc107;
+}
+
+/* ================= ADD TODO CARD ================= */
+
+.card {
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.btn-success {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ================= TODO CARDS ================= */
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+}
+
+.btn-danger {
+  border-radius: 10px;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
+}

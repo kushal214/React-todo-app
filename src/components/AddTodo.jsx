@@ -1,18 +1,19 @@
 import { useState } from "react";
 
 function AddTodo(props) {
-
+  const [error, setError] = useState("");
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
   const submit = (e) => {
-
     e.preventDefault();
 
-    if (!title || !desc) {
-      alert("Title or Description cannot be empty");
-      return;
-    }
+    if (!title.trim() || !desc.trim()) {
+  setError("Please fill in both Title and Description.");
+  return;
+}
+
+setError("");
 
     props.addTodo(title, desc);
 
@@ -21,46 +22,69 @@ function AddTodo(props) {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        <div className="col-md-7">
 
-      <h1>Add a Todo</h1>
+          <div className="card shadow-lg border-0 rounded-4">
+            <div className="card-body p-4">
 
-      <form onSubmit={submit}>
+              <h2 className="text-center mb-4 fw-bold text-dark">
+              Add a Todo
+            </h2>
 
-        <div className="mb-3">
-          <label className="form-label">
-            Todo Title
-          </label>
+              <form onSubmit={submit}>
 
-          <input
-            type="text"
-            className="form-control"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
+                {error && (
+                <div className="alert alert-danger">
+                   {error}
+               </div>
+              )}
+
+                <div className="mb-3">
+                  <label className="form-label fw-semibold">
+                    Todo Title
+                  </label>
+
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter todo title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="form-label fw-semibold">
+                    Todo Description
+                  </label>
+
+                  <textarea
+                    className="form-control"
+                    rows="3"
+                    placeholder="Enter todo description"
+                    value={desc}
+                    onChange={(e) => setDesc(e.target.value)}
+                  ></textarea>
+                </div>
+
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="btn btn-success px-5"
+                  >
+                    Add Todo
+                  </button>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
         </div>
-
-        <div className="mb-3">
-          <label className="form-label">
-            Todo Description
-          </label>
-
-          <input
-            type="text"
-            className="form-control"
-            value={desc}
-            onChange={(e) => setDesc(e.target.value)}
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="btn btn-success"
-        >
-          Add Todo
-        </button>
-
-      </form>
+      </div>
     </div>
   );
 }

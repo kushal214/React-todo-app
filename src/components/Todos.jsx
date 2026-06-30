@@ -1,20 +1,29 @@
 import TodoItem from "./TodoItem";
 
 function Todos(props) {
-
   return (
-    <div className="container mt-5">
-      <h1>Todos List</h1>
+    <div className="container mt-3">
+      <h2 className="text-center mb-4 fw-bold text-dark">
+      My Todo List
+    </h2>
 
-      {props.todos.map((todo) => (
-        <TodoItem
-  key={todo.id}
-  title={todo.title}
-  desc={todo.desc}
-  todo={todo}
-  onDelete={props.onDelete}
-/>
-      ))}
+      {props.todos.length === 0 ? (
+        <p className="text-muted">
+          No todos to display. Add a new todo!
+        </p>
+      ) : (
+        props.todos.map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            title={todo.title}
+            desc={todo.desc}
+            onDelete={props.onDelete}
+            onEdit={props.onEdit}
+            toggleComplete={props.toggleComplete}
+          />
+        ))
+      )}
     </div>
   );
 }
