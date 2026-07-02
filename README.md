@@ -1,16 +1,122 @@
-# React + Vite
+# 📝 React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean and responsive Todo application built with **React** and **Vite**. It helps users organize their daily tasks by allowing them to add, edit, delete, and mark tasks as completed. All todos are automatically saved using **Local Storage**, so your data remains available even after refreshing the page.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
 
-## React Compiler
+🔗 **https://react-todo-app-two-chi.vercel.app/**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ➕ Add new tasks
+- ✏️ Edit existing tasks
+- 🗑️ Delete tasks
+- ✅ Mark tasks as completed
+- 💾 Automatically saves tasks using Local Storage
+- 🏠 Easy navigation between Home and About pages
+- 📱 Clean and responsive user interface
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+
+![Home Page](screenshots/home-page.png)
+
+### 📋 Todo List
+
+![Todo List](screenshots/todo-list.png)
+
+---
+
+## 🛠️ Technologies Used
+
+- React
+- Vite
+- React Router
+- Bootstrap 5
+- JavaScript (ES6)
+- HTML5
+- CSS3
+
+---
+
+## 📂 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/kushal214/React-todo-app.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd React-todo-app
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open your browser and visit:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+react-todo-app/
+│
+├── public/
+├── screenshots/
+│   ├── home-page.png
+│   └── todo-list.png
+│
+├── src/
+│   ├── components/
+│   │   ├── About.jsx
+│   │   ├── AddTodo.jsx
+│   │   ├── Home.jsx
+│   │   ├── TodoItem.jsx
+│   │   └── Todos.jsx
+│   │
+│   ├── App.jsx
+│   ├── Header.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── README.md
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## 👨‍💻 Author
+
+**Kushal Pan**
+
+- GitHub: https://github.com/kushal214
+
+---
+
+⭐ If you like this project, consider giving it a **star** on GitHub!
